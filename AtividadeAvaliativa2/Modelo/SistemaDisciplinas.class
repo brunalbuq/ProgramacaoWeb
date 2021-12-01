@@ -1,0 +1,19 @@
+package br.com.disciplinas.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SistemaDisciplinas {
+
+	private List<Encontro> disciplinas = new ArrayList<Encontro>();
+	
+	public void adicionar(Encontro e) {
+		disciplinas.add(e);
+		//Gravar no banco de dados.
+	}
+	
+	public List<Disciplinas> listar(){
+		// Controlar no banco de dados
+		return disciplinas;
+	}
+}
