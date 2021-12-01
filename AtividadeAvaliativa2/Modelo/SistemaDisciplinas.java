@@ -5,14 +5,14 @@ import java.util.List;
 
 public class SistemaDisciplinas {
 
-	private List<Encontro> disciplinas = new ArrayList<Encontro>();
+	private List<Disciplina> disciplina = new ArrayList<Disciplina>();
 	
-	public void adicionar(Encontro e) {
-		disciplinas.add(e);
+	public void adicionar(Disciplina d) {
+		disciplina.add(d);
 		//Gravar no banco de dados.
 	}
 	
-	public List<Disciplinas> listar(){
+	public List<Disciplina> listarDisciplina(){
 		// Controlar no banco de dados
 		return disciplinas;
 	}
