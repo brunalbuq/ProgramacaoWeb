@@ -10,7 +10,7 @@ import br.com.disciplinas.model.SistemaDisciplinas;
 @WebListener
 public class ContextListener implements ServletContextListener {
 	
-	private static final String SISTEMA_DISCIPLINAS = "sistemaDisciplinas";
+	public static final String SISTEMA_DISCIPLINAS = "sistemaDisciplinas";
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
