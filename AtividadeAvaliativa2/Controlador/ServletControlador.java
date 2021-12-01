@@ -1,6 +1,7 @@
 package br.com.disciplinas.controller;
 
 import java.io.IOException;
+import javax.naming.Context;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,31 +34,35 @@ public class ServletControlador extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String acao = request.getParameter("acao");
+		String resposta = request.getParameter("resposta"); //resposta dada pelo link
 		
-		SistemaDisciplinas sistema = getServletContext().getAttribute(ContextListener.SISTEMA_DISCIPLINAS);
+		SistemaDisciplina sistema = (SistemaDisciplina) getServletContext()
+				.getAttribute(ContextListener.SISTEMA_DISCIPLINA);
 		
-		String resposta = "disciplinas.jsp";
+		String redirecionaTo = "menu.jsp";
+		//string resposavel por dizer para qual pagina sera redirecionado.
 		
-		if("cadastrar".equals(acao)) {
-			resposta = "cadastro.jsp";
-		} else if ("confirmarCadastro".equals(acao)) {
-			Disciplinas e = new Disciplina();
-			e.setNomeDisciplina(request.getParameter("nomeDisciplina"));
-			e.setLocal(request.getParameter("local"));
-			e.setMotivo(request.getParameter("motivo"));
-			e.setData(new Date());
+		if ("cadastro".equals(resposta)) {
+			redirecionaTo = "cadastroDisciplinas.jsp";
+		}else if ("addDisciplina".equals(resposta)) {
+			Disciplina d = new Disciplina(); //instanciando a classe disciplina para poder pegar os setters.
+			d.setNome(request.getParameter("nome"));
+			d.setNota(request.getParameter("nota"));
 			
-			sistema.adicionar(e);
+			sistema.adicionar(d);//chamando para adicionar a classe Disciplina e ter uma nova disciplina na lista.
 			
-			request.setAttribute("lista", sistema.listar());
+			request.setAttribute("lista", sistema.listarDisciplinas());
+			redirecionaTo = "listaDisciplinas.jsp";
 			
-			resposta = "listar.jsp";
-		}else if("listar".equals(acao)) {
-			resposta = "listar.jsp";
+		}else if ("listar".equals(resposta)) {
+			request.setAttribute("lista", sistema.listarDisciplinas());
+			redirecionaTo = "listaDisciplinas.jsp";
+		}else {
+			redirecionaTo = "menu.jsp";
+		
 		}
+		request.getRequestDispatcher(redirecionaTo).forward(request, response);
 		
-		request.getRequestDispatcher(resposta).forward(request, response);
 		
 	}
 
