@@ -31,12 +31,12 @@
 </head>
 <body style="times-new-romam: 'Roboto', sans-serif; color: #008080; background: #008080; text-align:center; margin-top: 10rem;">
 	
-	<div id="menu">  <! Formatar de acordo com o estilo em codigo css>
-	<%@include file="header.jsp"%>  <! Mostrar a saudação e hora do arquivo header>
+	<div id="menu"> 
+	<%@include file="header.jsp"%> 
 	
 	<h1>Cadastrar Disciplinas</h1>
 
-	<!Formulario para cadastro de disciplinas >	
+		
 	<form action="listaDisciplinas.jsp" method = "post">
 		Disciplina: <br/><input type= "text" name= "disciplina"/><br/>
 		Nota Final: <br/><input type= "text" onkeyup="verificaNota(this.value)" name = "nota" /><br/>
