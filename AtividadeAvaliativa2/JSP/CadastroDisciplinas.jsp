@@ -43,6 +43,6 @@
 		<input type= "submit" value= "Cadastrar Disciplina"/>
 	</form>
 
-	<br/> <a href="menu.jsp">Voltar</a>  <! link para voltar pro menu>
+	<br/> <a href="menu.jsp">Voltar</a> 
 </body>
 </html>
