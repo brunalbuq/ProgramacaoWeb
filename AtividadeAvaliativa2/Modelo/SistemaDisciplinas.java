@@ -1,7 +1,9 @@
-package br.com.disciplinas.model;
+package br.com.disciplinas.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.disciplinas.model.Disciplina;
 
 public class SistemaDisciplinas {
 
