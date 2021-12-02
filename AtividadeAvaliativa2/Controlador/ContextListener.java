@@ -5,7 +5,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import br.com.disciplinas.model.SistemaDisciplinas;
+import br.com.disciplinas.controller.SistemaDisciplinas;
 
 @WebListener
 public class ContextListener implements ServletContextListener {
@@ -24,3 +24,4 @@ public class ContextListener implements ServletContextListener {
 		context.removeAttribute(SISTEMA_DISCIPLINAS);
 		
 	}
+}
