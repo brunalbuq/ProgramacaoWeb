@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Cadastro</title>
 	
-	<!– Alterar estilo do menu  ->
+	//Alterar estilo do menu
 	
 	<style type="text/css">
 	#menu {
