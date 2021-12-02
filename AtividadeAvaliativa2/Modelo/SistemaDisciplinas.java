@@ -14,6 +14,6 @@ public class SistemaDisciplinas {
 	
 	public List<Disciplina> listarDisciplina(){
 		// Controlar no banco de dados
-		return disciplinas;
+		return disciplina;
 	}
 }
